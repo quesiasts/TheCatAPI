@@ -6,9 +6,11 @@ authors = ["Quesia Santos <quesiasts@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.8,<3.10"
 requests = "^2.28.1"
 Django = "^4.1"
+zappa = "^0.55.0"
+awscli = "^1.25.60"
 
 [tool.poetry.dev-dependencies]
 
