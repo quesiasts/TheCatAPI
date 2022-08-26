@@ -1,21 +1,25 @@
-from django.shortcuts import render
+from prettyconf import config
+from django.http import HttpResponse
 import requests
 
-def index(request):
-    api = "https://api.thecatapi.com/v1/images/search?limit=10"
-    req = requests.get(api)
 
-    try:
-        arr = req.json()
-    except ValueError:
-        print("The response didn't arrive in the expected format")
-
-    dictionary = {}
-    for index, value in enumerate(arr):
-        dictionary[index] = value
-
-    context = {
-        "cats" : dictionary
+# Create your views here.
+def get_breeds(request):
+    #pull data from third party rest api
+    headers = {
+        'x-api-key': config("API_KEY")
     }
+    response = requests.get('https://api.thecatapi.com/v1/breeds', headers=headers)
+    #convert reponse data into json
+    breeds = response.json()
 
-    return render(request, "index.html", context)
+    return HttpResponse(breeds)
+
+def get_image_urls(request):
+    headers = {
+        'x-api-key': config("API_KEY")
+    }
+    response = requests.get('https://api.thecatapi.com/v1/images/search?limit=3', headers=headers)
+    breeds = response.json()
+
+    return HttpResponse(breeds)
