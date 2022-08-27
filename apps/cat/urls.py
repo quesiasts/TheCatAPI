@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.get_breeds, name='index'),
-    path('urls', views.get_image_urls, name='name-urls')
+    path('categories/<int:id>/', views.get_image_urls, name='get_image_urls')
 ]
