@@ -7,13 +7,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cat', '0001_add_str_models'),
+        ("cat", "0001_add_str_models"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='cat',
-            name='image',
-            field=models.ImageField(storage=django.core.files.storage.FileSystemStorage(location='/media/photos'), upload_to=''),
+            model_name="cat",
+            name="image",
+            field=models.ImageField(
+                storage=django.core.files.storage.FileSystemStorage(
+                    location="/media/photos"
+                ),
+                upload_to="",
+            ),
         ),
     ]

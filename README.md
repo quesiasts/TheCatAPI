@@ -2,13 +2,13 @@
 
 Case The Cat API
 
- 
+
 
 1. Realize um desenho arquitetural informando como sua solução vai funcionar.
 
 
 2. Crie uma aplicação utilizando Python para coletar as seguintes informações da API de Gatos (https://thecatapi.com/):
- 
+
 
         - Para cada uma das raças de gatos disponíveis, armazenar as informações de origem, temperamento e descrição em uma base de dados (se disponível);
 
@@ -21,7 +21,7 @@ Case The Cat API
 
 3. Use uma base de dados(ex.: Dynamo AWS, RDS AWS, ...) adequada para armazenar as informações (você terá que justificar o uso dessa base)
 
- 
+
 4. Utilizando linguagem Python, crie 4 APIs REST, se possível utilizando-se de OpenAPI:
 
         a. API capaz de listar todas as raças;
@@ -32,7 +32,7 @@ Case The Cat API
 
         d. API capaz de a partir de uma origem listar as raças.
 
- 
+
 
 5. Crie uma coleção no Insomnia (ou se preferir no Postman) para consumir as APIs criadas (não se esqueça de incluir como parte da entrega)
 
@@ -49,9 +49,9 @@ Case The Cat API
 
         d. Instruções sobre como podemos subir uma cópia deste ambiente localmente
 
- 
 
- 
+
+
 #### Bônus - se você chegou até aqui, considere implementar um ou mais itens a seguir:
 
 
