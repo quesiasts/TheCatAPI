@@ -215,6 +215,32 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "factory-boy"
+version = "3.2.1"
+description = "A versatile test fixtures replacement based on thoughtbot's factory_bot for Ruby."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+Faker = ">=0.7.0"
+
+[package.extras]
+dev = ["coverage", "django", "flake8", "isort", "pillow", "sqlalchemy", "mongoengine", "wheel (>=0.32.0)", "tox", "zest.releaser"]
+doc = ["sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
+
+[[package]]
+name = "faker"
+version = "14.1.0"
+description = "Faker is a Python package that generates fake data for you."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+python-dateutil = ">=2.4"
+
+[[package]]
 name = "filelock"
 version = "3.8.0"
 description = "A platform independent file lock."
@@ -725,7 +751,7 @@ wsgi-request-logger = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.10"
-content-hash = "6d899f67426e937bd7ccea2074773f6c11138c4cbf0cefd8e123fff6870d0a49"
+content-hash = "ddfe637144b66f46c321e60839558665a99c9f4dd6b387558fabfef2dcabcd0c"
 
 [metadata.files]
 argcomplete = []
@@ -747,6 +773,8 @@ django = []
 djangorestframework = []
 docutils = []
 durationpy = []
+factory-boy = []
+faker = []
 filelock = []
 hjson = []
 identify = []

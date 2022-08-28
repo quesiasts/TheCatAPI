@@ -13,4 +13,4 @@ lint:
 	poetry run pre-commit install && poetry run pre-commit run -a -v
 
 test:
-	poetry run pytest --benchmark-skip -sx thecatapi
+	poetry run pytest apps/tests/
