@@ -1,6 +1,6 @@
 import factory
 
-from apps.cat.models import Cat, CatBreed
+from ..cat.models import Cat, CatBreed
 
 
 class CatFactory(factory.django.DjangoModelFactory):
