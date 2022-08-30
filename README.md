@@ -1,62 +1,20 @@
 # TheCatAPI
+### Desenho Arquitetural
 
-Case The Cat API
+![Arquitetura](/apps/architecture/arq.png)
 
+### Collections
+As collections encontram-se na pasta `apps/collections`
 
+### Projeto:
 
-1. Realize um desenho arquitetural informando como sua solução vai funcionar.
+1. Utilizei o projeto apenas com o banco local pois tentei subir para AWS mas não consegui, visto que deu alguns erros de Authorização, mas se fosse usar um banco de produção seria o RDS Aurora Postgres pois já tenho uma certa familiaridade
 
+2. Utilizei hooks pois acredito que o projeto fica mais robusto e profissional, visto que não aceita quaisquer tipo de erros
 
-2. Crie uma aplicação utilizando Python para coletar as seguintes informações da API de Gatos (https://thecatapi.com/):
-
-
-        - Para cada uma das raças de gatos disponíveis, armazenar as informações de origem, temperamento e descrição em uma base de dados (se disponível);
-
-        - Para cada uma das raças acima, salvar o endereço de 3 imagens em uma base de dados (se disponível);
-
-        - Salvar o endereço de 3 imagens de gatos com chapéu;
-
-        - Salvar o endereço de 3 imagens de gatos com óculos.
-
-
-3. Use uma base de dados(ex.: Dynamo AWS, RDS AWS, ...) adequada para armazenar as informações (você terá que justificar o uso dessa base)
-
-
-4. Utilizando linguagem Python, crie 4 APIs REST, se possível utilizando-se de OpenAPI:
-
-        a. API capaz de listar todas as raças;
-
-        b. API capaz de listar as informações de uma raça;
-
-        c. API capaz de a partir de um temperamento listar as raças;
-
-        d. API capaz de a partir de uma origem listar as raças.
-
-
-
-5. Crie uma coleção no Insomnia (ou se preferir no Postman) para consumir as APIs criadas (não se esqueça de incluir como parte da entrega)
-
-6. Utilize alguma biblioteca de logging de forma que os eventos gerados sejam identificados corretamente, por exemplo: Warning, Erro, Debug, Info, etc.
-
-
-7. Publique o projeto no Github e documente em um README.md os itens abaixo:
-
-        a. Documentação do projeto;
-
-        b. Documentação das APIs;
-
-        c. Documentação de arquitetura;
-
-        d. Instruções sobre como podemos subir uma cópia deste ambiente localmente
-
-
-
-
-#### Bônus - se você chegou até aqui, considere implementar um ou mais itens a seguir:
-
-
-8. (Bônus) Publique sua API na cloud (Ex.: AWS Lambda).
-
-9. (Bônus) para o item 6 integre a aplicação a alguma ferramenta de Logging (exemplos:AWS Cloudwatch, Elastic Search, Splunk, Graylog ou similar), crie uma query que mostre em tempo real os eventos que acontecem na execução da API criada no item 6, exemplos (Warning, Erro, Debug, Info, etc).
-
-10. (Bônus) para o item 4, implemente as mesmas rotas mas com retorno assíncrono - ou seja, o usuário irá informar um e-mail para o qual as imagens (URL's) devem ser enviadas. Utilize algum mecanismo de enfileiramento que preferir.
+3. Para subir uma cópia local, precisa:
+- Ter o Poetry instalado em sua máquina
+- Clonar este repositório em sua máquina
+- Copiar o arquivo local.env e setar a chave de acesso para conseguir acessar os endpoints públicos da api
+- Rodar o comando `poetry install` para instalar todas as dependências deste arquivo
+- Criar um banco de dados com as especificações contidas no `settings.py` e rodar o comando dentro da pasta ./cat `python manage.py migrate` para persistir as mudanças das migrações no banco de dados
